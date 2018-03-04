@@ -1,0 +1,19 @@
+* Installation et configuration:
+
+1- extraire le fichier zip
+2- créer un projet Firebase
+3- récupérer l'objet de config de firebase
+  * Cliquer sur "Ajouter Firebase à votre application Web"
+  * Copier l'objet config
+4- placer l'objet config récupéré dans le fichier app.module.ts
+  * Assigner l'objet à la constante firebaseConfig 
+5- Firebase --> authentification --> Ajouter un utilisateur (login et pass)
+6- accéder au projet via l'invite de commande  puis ng serve si vous utilisez angular cli,
+ npm start si vous utilisez npm
+
+* Utilisation
+
+1- utiliser le login et pass récemment crées pour accéder à la page d'articles
+2- Remplir la formuler puis submit pour créer un nouvel article 
+3- cliquer edit pour modifier les informations d'article
+4- cliquer delete pour supprimer un article

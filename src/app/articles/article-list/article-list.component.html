@@ -1,0 +1,25 @@
+<h6 class="text-center">Liste des articles</h6>
+<table class="table-sm table-hover">
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Type</td>
+    <td>Status</td> 
+  </tr>
+  <tr *ngFor="let article of articleList">
+    <td>{{article.name}}</td>
+    <td>{{article.description}}</td>
+    <td>{{article.type}}</td>
+    <td>
+      <a class="btn" (click)="onEdit(article)">
+        edit
+      </a>
+    </td>
+    <td>
+      <a class="btn" (click)="onDelete(article.$key)">
+        delete
+      </a>
+    </td>
+  </tr>
+</table>
+

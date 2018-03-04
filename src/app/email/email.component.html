@@ -1,0 +1,32 @@
+<!--<div class="form-container">
+  <h2>Login</h2>
+  <form #formData='ngForm' (ngSubmit)='onSubmit(formData)'>
+    <input type="text" placeholder="Email address" (ngModel)="email" name="email" class="input-txt" required>
+    <input type="password" placeholder="Password" (ngModel)="password" name="password" class="input-txt" required>
+    <button type="submit" [disabled]="!formData.valid" class="auth-btn">Log in</button>
+  </form>
+</div>-->
+<form [formGroup]="loginForm" novalidate (ngSubmit)="signUp()">
+  <div class="form-group">
+    <label>Login</label>
+    <input type="email" class="form-control input-txt" formControlName="login">
+  </div>
+  <div  *ngIf="login.invalid && login.dirty" class="notification is-danger">
+    l'email n'est pas valide
+  </div>
+  <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control input-txt" formControlName="password">
+  </div>
+  <div *ngIf="password.invalid && password.touched" class="notification is-danger">
+      le mot de passe doit contenir entre 6 et 26 caractères 
+  </div>
+
+  <div *ngIf="login.invalid && login.dirty" class="notification is-danger">
+    Hello {{loginForm.value.login }} {{loginForm.value.password}}
+  </div>
+  <button type="submit" [disabled]="!loginForm.valid" class="col-sm-4">Submit</button>
+  <div *ngIf="!loginForm.valid " class="notification is-danger">
+      login ou mot de passe incorrect
+  </div>
+</form>
